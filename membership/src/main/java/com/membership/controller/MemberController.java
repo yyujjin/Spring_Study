@@ -24,25 +24,29 @@ public class MemberController {
 	@Autowired
 	MemberService service;
 	
-	
+	//홈페이지 창
 	@GetMapping("/main") 
 	public void getMain() {
 		log.info("메인 홈페이지 진입");
 		System.out.println("진입함");
 	}
+	//회원 가입 페이지 get
 	@GetMapping("/join")
 	public void getJoin() {
 		log.info("회원가입 페이지에 진입했다.");
 	}
 	
 	//아직 구현안됨
+	//회원 가입 페이지 post
 	@PostMapping("/join")
 	public String postJoin(memberVO vo) {
 		log.info("회원 가입 등록이 실행되었다.");
 		log.info("VO : "+ vo);
+		service.postMember(vo);
 		return "/member/main";
 	}
 	
+	//리스트 조회창 
 	//배열을 리턴받아서 그걸 화면에 뿌려줘야해. 
 	@GetMapping("/list")
 	public void getList(Model model) {

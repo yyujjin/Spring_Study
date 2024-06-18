@@ -32,6 +32,7 @@
 			<td  width="100"><c:out value="${list.userAge}" /></td>
 		</tr>
 	</c:forEach>
-	</table>
+	</table> <br> <br>
+	<a href="/member/main">메인화면으로 돌아가기</a>
 </body>
 </html>
