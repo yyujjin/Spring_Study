@@ -26,7 +26,7 @@ public class MembershipMapperTest {
 		vo.setUserId("짱구");
 		vo.setUserPw("mapper");
 		vo.setUsreName("mapper test");
-		vo.setUserAge(20);
+		vo.setUserAge("20");
 
 		mapper.postMember(vo);
 

@@ -8,7 +8,8 @@
 </head>
 <body>
 <h1>메인 페이지 입니다.</h1>
-<!-- 기본 절대경로가 /이거고 membership이라는 폴더안에 join페이지가 있으니까 -->
+<!-- 컨트롤러의 주소와 맞춰줘야 하는것같음  -->
 <a href="/member/join">회원가입 하러가기</a>
+<a href="/member/list">회원 리스트 보러가기</a>
 </body>
 </html>
