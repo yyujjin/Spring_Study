@@ -1,5 +1,9 @@
 package com.membership.mapper;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 //import org.junit.runner.RunWith;
@@ -13,22 +17,37 @@ import com.membership.model.memberVO;
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 public class MembershipMapperTest {
 
+
+//	@Test
+//	public void test() {
+//
+//		memberVO vo = new memberVO();
+//
+////자동생성 키라서 값 안넣어줘도 오류 안남 
+////		vo.setId(3);
+//		vo.setUserId("짱구");
+//		vo.setUserPw("mapper");
+//		vo.setUsreName("mapper test");
+//		vo.setUserAge("20");
+//
+//		mapper.postMember(vo);
+//
+//	}
+	
 	@Autowired
 	private membershipMapper mapper;
-
+	
 	@Test
 	public void test() {
-
+		
 		memberVO vo = new memberVO();
-
-//자동생성 키라서 값 안넣어줘도 오류 안남 
-//		vo.setId(3);
-		vo.setUserId("짱구");
-		vo.setUserPw("mapper");
-		vo.setUsreName("mapper test");
-		vo.setUserAge("20");
-
-		mapper.postMember(vo);
-
+		List<memberVO> list;
+		
+		
+		list = mapper.getMembers();
+		System.err.println("실행되었다.");
+		System.out.println(list);
+		
+		
 	}
 }

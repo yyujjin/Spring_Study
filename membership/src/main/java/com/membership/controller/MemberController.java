@@ -1,11 +1,17 @@
 package com.membership.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.membership.model.memberVO;
+import com.membership.service.MemberService;
 
 import lombok.extern.java.Log;
 
@@ -15,7 +21,10 @@ import lombok.extern.java.Log;
 @RequestMapping("/member/*")
 @Controller
 public class MemberController {
-
+	@Autowired
+	MemberService service;
+	
+	
 	@GetMapping("/main") 
 	public void getMain() {
 		log.info("메인 홈페이지 진입");
@@ -23,16 +32,22 @@ public class MemberController {
 	}
 	@GetMapping("/join")
 	public void getJoin() {
-		log.info("진입했다.");
+		log.info("회원가입 페이지에 진입했다.");
 	}
+	
+	//아직 구현안됨
 	@PostMapping("/join")
 	public String postJoin(memberVO vo) {
-		log.info("POST JOIN에 진입했다.");
+		log.info("회원 가입 등록이 실행되었다.");
 		log.info("VO : "+ vo);
 		return "/member/main";
-		
 	}
 	
-	
+	//배열을 리턴받아서 그걸 화면에 뿌려줘야해. 
+	@GetMapping("/list")
+	public void getList(Model model) {
+		log.info("get List에 진입했다.");
+		model.addAttribute("list",service.getMembers());
+	}
 
 }

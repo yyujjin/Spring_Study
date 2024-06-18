@@ -32,7 +32,7 @@ public class MemberServiceTest {
 	
 	vo.setUserId("service ");
 	vo.setUserPw("service");
-	vo.setUsreName("service test");
+	vo.setUserName("service test");
 //	vo.setUserAge(55);
 	
 	service.postMember(vo);

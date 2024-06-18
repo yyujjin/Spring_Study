@@ -7,8 +7,9 @@ public class memberVO {
 	private String userName;
 	private String userAge;
 	
-	public int getId() {
-		return id;
+	public String getId() {
+		
+		return Integer.toString(id);
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -25,11 +26,11 @@ public class memberVO {
 	public void setUserPw(String userPw) {
 		this.userPw = userPw;
 	}
-	public String getUsreName() {
+	public String getUserName() {
 		return userName;
 	}
-	public void setUsreName(String usreName) {
-		this.userName = usreName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getUserAge() {
 		return userAge;
@@ -40,7 +41,7 @@ public class memberVO {
 	
 	@Override
 	public String toString() {
-		return "memberVO [id=" + id + ", userId=" + userId + ", userPw=" + userPw + ", usreName=" + userName
+		return "memberVO [id=" + id + ", userId=" + userId + ", userPw=" + userPw + ", userName=" + userName
 				+ ", userAge=" + userAge + "]";
 	}
 	

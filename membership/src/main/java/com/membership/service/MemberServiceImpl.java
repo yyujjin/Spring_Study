@@ -1,5 +1,7 @@
 package com.membership.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,10 @@ public class MemberServiceImpl implements MemberService{
 	//이 함수가 동작할 땐 mapper을 호출한다. 
 	public void postMember(memberVO vo) {
 		mapper.postMember(vo);
+	}
+	
+	@Override
+	public List<memberVO> getMembers() {
+		return mapper.getMembers();
 	}
 }

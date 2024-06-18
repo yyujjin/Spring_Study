@@ -1,5 +1,7 @@
 package com.membership.service;
 
+import java.util.List;
+
 import com.membership.model.memberVO;
 
 public interface MemberService {
@@ -7,4 +9,5 @@ public interface MemberService {
 	//매개변수로 vo가 들어가야한다.
 	//그래야 자동으로 객체생성이되고 setter 함수가 호출돼서 그 값으로 뭘 할 수 있음 
 	public void postMember(memberVO vo);
+	public  List<memberVO> getMembers();
 }
