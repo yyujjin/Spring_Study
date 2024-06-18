@@ -10,11 +10,28 @@
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>11</java-version>
-		<org.springframework-version>4.1.7.RELEASE</org.springframework-version>
+		<org.springframework-version>4.3.0.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+<!-- 	롬복 -->
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- 스프링 프레임워크 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.3.0.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- Spring -->
 		<dependency>
@@ -100,30 +117,30 @@
 		</dependency>
 
 		<!-- log4 -->
-		<!-- <dependency> -->
-		<!-- <groupId>log4j</groupId> -->
-		<!-- <artifactId>log4j</artifactId> -->
-		<!-- <version>1.2.15</version> -->
-		<!-- <exclusions> -->
-		<!-- <exclusion> -->
-		<!-- <groupId>javax.mail</groupId> -->
-		<!-- <artifactId>mail</artifactId> -->
-		<!-- </exclusion> -->
-		<!-- <exclusion> -->
-		<!-- <groupId>javax.jms</groupId> -->
-		<!-- <artifactId>jms</artifactId> -->
-		<!-- </exclusion> -->
-		<!-- <exclusion> -->
-		<!-- <groupId>com.sun.jdmk</groupId> -->
-		<!-- <artifactId>jmxtools</artifactId> -->
-		<!-- </exclusion> -->
-		<!-- <exclusion> -->
-		<!-- <groupId>com.sun.jmx</groupId> -->
-		<!-- <artifactId>jmxri</artifactId> -->
-		<!-- </exclusion> -->
-		<!-- </exclusions> -->
-		<!-- <scope>runtime</scope> -->
-		<!-- </dependency> -->
+		<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.15</version>
+		<exclusions>
+		<exclusion>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		</exclusion>
+		<exclusion>
+		<groupId>javax.jms</groupId>
+		<artifactId>jms</artifactId>
+		</exclusion>
+		<exclusion>
+		<groupId>com.sun.jdmk</groupId>
+		<artifactId>jmxtools</artifactId>
+		</exclusion>
+		<exclusion>
+		<groupId>com.sun.jmx</groupId>
+		<artifactId>jmxri</artifactId>
+		</exclusion>
+		</exclusions>
+		<scope>runtime</scope>
+		</dependency>
 		<!-- log4j 추가 -->
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
 		<dependency>

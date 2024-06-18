@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.membership.mapper.membershipMapper">
+
+	<insert id="postMember">
+<!-- 	INSERT 넣을 떄 값 안넣는 필드는 NULL값으로 들어감 -->
+<!-- 	id는 AI로 해놓았기 떄문에 NULL값이 들어가도 자동으로 생성됨 -->
+		insert into members(id,userId,userPw,userName,userAge) values (#{id},#{userId},
+		#{userPw}, #{userName},#{userAge})
+
+	</insert>
+</mapper>

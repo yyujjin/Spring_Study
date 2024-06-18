@@ -1,40 +1,47 @@
 package com.membership.model;
 
 public class memberVO {
-	private String user_id;
-	private String user_pw;
-	private String user_name;
-	private int user_age;
-	public String getUser_id() {
-		return user_id;
+	private int id;
+	private String userId;
+	private String userPw;
+	private String userName;
+	private int userAge;
+	
+	public int getId() {
+		return id;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getUser_pw() {
-		return user_pw;
+	public String getUserId() {
+		return userId;
 	}
-	public void setUser_pw(String user_pw) {
-		this.user_pw = user_pw;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	public String getUser_name() {
-		return user_name;
+	public String getUserPw() {
+		return userPw;
 	}
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserPw(String userPw) {
+		this.userPw = userPw;
 	}
-	public int getUser_age() {
-		return user_age;
+	public String getUsreName() {
+		return userName;
 	}
-	public void setUser_age(int user_age) {
-		this.user_age = user_age;
+	public void setUsreName(String usreName) {
+		this.userName = usreName;
 	}
+	public int getUserAge() {
+		return userAge;
+	}
+	public void setUserAge(int userAge) {
+		this.userAge = userAge;
+	}
+	
 	@Override
 	public String toString() {
-		return "memberVO [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_age="
-				+ user_age + "]";
+		return "memberVO [id=" + id + ", userId=" + userId + ", userPw=" + userPw + ", usreName=" + userName
+				+ ", userAge=" + userAge + "]";
 	}
-	
-	
 	
 }

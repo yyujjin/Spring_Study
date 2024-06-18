@@ -31,6 +31,7 @@
 		<property name="dataSource" ref="datasource"></property>
 	</bean>
 	
+<!-- 	스프링이 자동으로 해당 어노테이션이 붙은 클래스들을 스캔하여 bean으로서 생성 -->
 	<mybatis-spring:scan
 		base-package="com.membership.mapper" />
 	<context:component-scan
