@@ -25,4 +25,10 @@ public class MemberServiceImpl implements MemberService{
 	public List<memberVO> getMembers() {
 		return mapper.getMembers();
 	}
+
+	@Override
+	public memberVO updateList(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

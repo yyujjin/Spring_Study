@@ -53,5 +53,15 @@ public class MemberController {
 		log.info("get List에 진입했다.");
 		model.addAttribute("list",service.getMembers());
 	}
+	//회원 수정 페이지
+	@GetMapping("/updateList")
+	public void getUpdateList(memberVO id) {
+		log.info("회원 수원 페이지에 진입했다.");
+		log.info("가져온 id : "+id);
+		
+	}
+	
+	
+		}
+	
 
-}
