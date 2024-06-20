@@ -55,7 +55,7 @@ public class MembershipMapperTest {
 	public void test() {
 		int id=7;
 		
-		memberVO vo = mapper.updateList(id);
+		memberVO vo = mapper.getPersonelInfo(id);
 		System.err.println(vo.toString());
 	}
 	

@@ -9,6 +9,6 @@ public interface membershipMapper {
 	//들어온 vo를 가지고 sql문을 작성해야하니까
 	
 	public void postMember(memberVO vo);
-	public List<memberVO> getMembers();
-	public memberVO updateList(int id);
+	public List<memberVO> getMemberList();
+	public memberVO getPersonelInfo(int id);
 }

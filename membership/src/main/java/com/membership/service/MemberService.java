@@ -14,10 +14,10 @@ public interface MemberService {
 //	회원 가입 
 	public void postMember(memberVO vo);
 //	회원 리스트 가져오기
-	public  List<memberVO> getMembers();
+	public  List<memberVO> getMemberList();
 	
 //회원 정보 페이지 진입
-	public memberVO updateList(int id);
+	public memberVO getPersonelInfo(int id);
 	
 	
 }

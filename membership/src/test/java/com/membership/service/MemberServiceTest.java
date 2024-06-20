@@ -49,7 +49,7 @@ public class MemberServiceTest {
         
         int id = 7;
         
-        memberVO vo = service.updateList(id);
+        memberVO vo = service.getPersonelInfo(id);
         log.info(vo.toString());
     }
 }

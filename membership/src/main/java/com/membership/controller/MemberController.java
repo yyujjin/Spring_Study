@@ -46,21 +46,21 @@ public class MemberController {
 
 	// 리스트 조회창
 	@GetMapping("/list")
-	public void getList(Model model) {
+	public void getMemberList(Model model) {
 		log.info("회원 리스트 조회창 진입");
-		model.addAttribute("list", service.getMembers());
+		model.addAttribute("list", service.getMemberList());
 		// map 형식이라서 키는 스트링으로 밖에 안된까 저렇게 해주는거고
 		// 키 : 값 이네
 	}
 
 	// 개인 회원 수정 페이지
-	@RequestMapping("/updateList")
+	@RequestMapping("/updateInfo")
 	@GetMapping
-	public String getUpdateList(@RequestParam int id, Model model) {
+	public String getPersonelInfo(@RequestParam int id, Model model) {
 
 		log.info("가져온 id값은 : " + id);
-		model.addAttribute("info",service.updateList(id));
-		return "/member/updateList";
+		model.addAttribute("info",service.getPersonelInfo(id));
+		return "/member/updateInfo";
 	}
 
 }
