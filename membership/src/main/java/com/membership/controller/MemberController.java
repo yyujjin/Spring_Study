@@ -56,9 +56,11 @@ public class MemberController {
 	// 개인 회원 수정 페이지
 	@RequestMapping("/updateList")
 	@GetMapping
-	public void getUpdateList(@RequestParam String id) {
+	public String getUpdateList(@RequestParam int id, Model model) {
 
 		log.info("가져온 id값은 : " + id);
+		model.addAttribute("info",service.updateList(id));
+		return "/member/updateList";
 	}
 
 }

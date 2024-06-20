@@ -16,9 +16,6 @@
 	</insert>
 
 	<!-- 회원 리스트 조회 -->
-	<!-- 근데 진짜 편리하다. -->
-	<!-- 내가 db에서 정보 빼온걸 저장하려고 무슨 함수를 작성해주지 않아도 리턴타입만 적어주면 그렇게 저절로 바뀐다는 거잖아 -->
-	<!-- 셀렉트문에서 가져오는 타입을 정해주기!!! -->
 	<select id="getMembers"
 		resultType="com.membership.model.memberVO">
 		SELECT * FROM testdb.members

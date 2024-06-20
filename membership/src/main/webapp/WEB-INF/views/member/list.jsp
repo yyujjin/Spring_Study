@@ -25,7 +25,6 @@
 				<th>EDIT</th>
 			</tr>
 
-			<!-- 		이건 스트링이 아닐까 list가 -->
 			<c:forEach items="${list}" var="list" varStatus="status">
 				<tr>
 					<td width="100"><c:out value="${status.index}" /></td>
@@ -33,7 +32,7 @@
 					<td width="100"><c:out value="${list.userPw}" /></td>
 					<td width="100"><c:out value="${list.userName}" /></td>
 					<td width="100"><c:out value="${list.userAge}" /></td>
-					<td> <a href="/member/updateList?id='${list.id}'"><button>수정하기</button></a></td>
+					<td> <a href="/member/updateList?id=${list.id}"><button>수정하기</button></a></td>
 				</tr>
 			</c:forEach>
 		</table>
