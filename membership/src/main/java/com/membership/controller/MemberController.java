@@ -53,16 +53,17 @@ public class MemberController {
 		// 키 : 값 이네
 	}
 
-	// 개인 회원 수정 페이지
-	@RequestMapping("/updateInfo")
+	// 개인 회원 정보 보기
+	@RequestMapping("/personelInfo")
 	@GetMapping
 	public String getPersonelInfo(@RequestParam int id, Model model) {
 
 		log.info("가져온 id값은 : " + id);
 		model.addAttribute("info", service.getPersonelInfo(id));
-		return "/member/updateInfo";
+		return "/member/personelInfo";
 	}
 
+	//개인 회원 정보 접근 페이지, 수정 로직
 	@PostMapping("/updatePersonelInfo")
 	public String updatePersonelInfo(memberVO vo) {
 		log.info("개인 회원 수정 로직 진입");
@@ -72,6 +73,11 @@ public class MemberController {
 		return "redirect:/member/list";
 	}
 
+	
+	
+	
+	
+	
 }
 
 

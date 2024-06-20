@@ -36,6 +36,7 @@
 		</table>
 		<input type="hidden" name="id" value="<c:out value='${info.id}' />">
 		<button type="submit">수정하기</button>
+		
 	</form>
 	<br>
 	<br>

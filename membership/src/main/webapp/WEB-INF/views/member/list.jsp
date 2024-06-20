@@ -32,7 +32,7 @@
 					<td width="100"><c:out value="${list.userPw}" /></td>
 					<td width="100"><c:out value="${list.userName}" /></td>
 					<td width="100"><c:out value="${list.userAge}" /></td>
-					<td> <a href="/member/updateInfo?id=${list.id}"><button>수정하기</button></a></td>
+					<td> <a href="/member/personelInfo?id=${list.id}"><button>수정하기</button></a></td>
 				</tr>
 			</c:forEach>
 		</table>
