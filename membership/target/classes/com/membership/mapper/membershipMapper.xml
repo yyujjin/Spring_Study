@@ -5,6 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.membership.mapper.membershipMapper">
 
+	<!-- 회원 추가 -->
 	<insert id="postMember">
 		<!-- INSERT 넣을 떄 값 안넣는 필드는 NULL값으로 들어감 -->
 		<!-- id는 AI로 해놓았기 떄문에 NULL값이 들어가도 자동으로 생성됨 -->
@@ -13,10 +14,21 @@
 		#{userPw}, #{userName},#{userAge})
 
 	</insert>
-<!-- 근데 진짜 편리하다. -->
-<!-- 내가 db에서 정보 빼온걸 저장하려고 무슨 함수를 작성해주지 않아도 리턴타입만 적어주면 그렇게 저절로 바뀐다는 거잖아 -->
-<!-- 셀렉트문에서 가져오는 타입을 정해주기!!! -->
-	<select id="getMembers" resultType="com.membership.model.memberVO">
+
+	<!-- 회원 리스트 조회 -->
+	<!-- 근데 진짜 편리하다. -->
+	<!-- 내가 db에서 정보 빼온걸 저장하려고 무슨 함수를 작성해주지 않아도 리턴타입만 적어주면 그렇게 저절로 바뀐다는 거잖아 -->
+	<!-- 셀렉트문에서 가져오는 타입을 정해주기!!! -->
+	<select id="getMembers"
+		resultType="com.membership.model.memberVO">
 		SELECT * FROM testdb.members
 	</select>
+	
+	
+
+	<!-- 회원 수정 페이지 -->
+	<select id="updateList" parameterType="int" resultType="com.membership.model.memberVO">
+		select * from testdb.members where id = #{id}
+	</select>
+
 </mapper>

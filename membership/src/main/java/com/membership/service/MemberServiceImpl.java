@@ -27,8 +27,12 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public memberVO updateList(int num) {
-		// TODO Auto-generated method stub
-		return null;
+	//매개변수로 vo가 들어오면 그것만 자동으로 값 생성되고
+	//마이바티스 할 때도 vo로만 인식되는 건가
+	public memberVO updateList(int id) {
+		return mapper.updateList(id);
 	}
+
+	
+
 }

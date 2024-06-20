@@ -1,14 +1,12 @@
 package com.membership.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.membership.model.memberVO;
 import com.membership.service.MemberService;
@@ -23,45 +21,44 @@ import lombok.extern.java.Log;
 public class MemberController {
 	@Autowired
 	MemberService service;
-	
-	//홈페이지 창
-	@GetMapping("/main") 
+
+	// 홈페이지 창
+	@GetMapping("/main")
 	public void getMain() {
 		log.info("메인 홈페이지 진입");
-		System.out.println("진입함");
 	}
-	//회원 가입 페이지 get
+
+	// 회원 가입 페이지 get
 	@GetMapping("/join")
 	public void getJoin() {
-		log.info("회원가입 페이지에 진입했다.");
+		log.info("회원 가입 페이지 진입");
+
 	}
-	
-	//아직 구현안됨
-	//회원 가입 페이지 post
+
+	// 회원 가입 페이지 post
 	@PostMapping("/join")
 	public String postJoin(memberVO vo) {
-		log.info("회원 가입 등록이 실행되었다.");
-		log.info("VO : "+ vo);
+		log.info("회원 가입 등록 완료");
+		log.info("VO : " + vo);
 		service.postMember(vo);
 		return "/member/main";
 	}
-	
-	//리스트 조회창 
-	//배열을 리턴받아서 그걸 화면에 뿌려줘야해. 
+
+	// 리스트 조회창
 	@GetMapping("/list")
 	public void getList(Model model) {
-		log.info("get List에 진입했다.");
-		model.addAttribute("list",service.getMembers());
+		log.info("회원 리스트 조회창 진입");
+		model.addAttribute("list", service.getMembers());
+		// map 형식이라서 키는 스트링으로 밖에 안된까 저렇게 해주는거고
+		// 키 : 값 이네
 	}
-	//회원 수정 페이지
-	@GetMapping("/updateList")
-	public void getUpdateList(memberVO id) {
-		log.info("회원 수원 페이지에 진입했다.");
-		log.info("가져온 id : "+id);
-		
-	}
-	
-	
-		}
-	
 
+	// 개인 회원 수정 페이지
+	@RequestMapping("/updateList")
+	@GetMapping
+	public void getUpdateList(@RequestParam String id) {
+
+		log.info("가져온 id값은 : " + id);
+	}
+
+}

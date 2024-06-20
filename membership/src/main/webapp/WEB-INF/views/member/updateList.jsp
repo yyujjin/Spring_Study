@@ -18,13 +18,13 @@
 	<th>NAME</th>
 	<th>AGE</th>
 	</tr>
-	<c:forEach items="${list}" var="list">
+	<c:forEach items="${info}" var="info">
 		<tr>
-			<td width="400"><c:out value="${list.id}" /></td>
-			<td  width="400"><c:out value="${list.userId}" /></td>
-			<td  width="400"><c:out value="${list.userPw}" /></td>
-			<td  width="400"><c:out value="${list.userName}" /></td>
-			<td  width="400"><c:out value="${list.userAge}" /></td>
+			<td width="400"><c:out value="${info.id}" /></td>
+			<td  width="400"><c:out value="${info.userId}" /></td>
+			<td  width="400"><c:out value="${info.userPw}" /></td>
+			<td  width="400"><c:out value="${info.userName}" /></td>
+			<td  width="400"><c:out value="${info.userAge}" /></td>
 		</tr>
 	</c:forEach>
 	</table> <br> <br>

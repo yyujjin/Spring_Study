@@ -1,6 +1,6 @@
 package com.membership.mapper;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+//import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 
 import java.util.List;
 
@@ -37,17 +37,27 @@ public class MembershipMapperTest {
 	@Autowired
 	private membershipMapper mapper;
 	
+//	@Test
+//	public void test() {
+//		
+//		memberVO vo = new memberVO();
+//		List<memberVO> list;
+//		
+//		
+//		list = mapper.getMembers();
+//		System.err.println("실행되었다.");
+//		System.out.println(list);
+//		
+//		
+//	}
+	
 	@Test
 	public void test() {
+		int id=7;
 		
-		memberVO vo = new memberVO();
-		List<memberVO> list;
-		
-		
-		list = mapper.getMembers();
-		System.err.println("실행되었다.");
-		System.out.println(list);
-		
-		
+		memberVO vo = mapper.updateList(id);
+		System.err.println(vo.toString());
 	}
+	
+	
 }
