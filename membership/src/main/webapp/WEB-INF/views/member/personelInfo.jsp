@@ -36,6 +36,7 @@
 		</table>
 		<input type="hidden" name="id" value="<c:out value='${info.id}' />">
 		<button type="submit">수정하기</button>
+		<a href="/member/deleteInfo?id=${info.id}"><button type="button">삭제하기</button></a>
 		
 	</form>
 	<br>

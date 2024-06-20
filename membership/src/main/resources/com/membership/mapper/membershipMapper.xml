@@ -28,10 +28,20 @@
 		resultType="com.membership.model.memberVO">
 		select * from testdb.members where id = #{id}
 	</select>
-	
+
 	<!-- 개인 회원 정보 수정하기 -->
-	<update id="updatePersonelInfo" >
-		update testdb.members set userId=#{userId},userPw=#{userPw},userName=#{userName},userAge=#{userAge} where id = #{id};
+	<update id="updatePersonelInfo">
+		update testdb.members set
+		userId=#{userId},userPw=#{userPw},userName=#{userName},userAge=#{userAge}
+		where id = #{id};
 	</update>
+
+
+
+
+	<!-- 개인 회원 정보 삭제하기 -->
+	<delete id="deletePersonelInfo" parameterType="int" >
+		delete from testdb.members where id=#{id};
+	</delete>
 
 </mapper>

@@ -10,35 +10,39 @@ import com.membership.model.memberVO;
 
 //서비스 역할을 하는애라고 알려주기
 @Service
-public class MemberServiceImpl implements MemberService{
-	
-	//mapper함수 불러야하니까 객체 생성해주기
+public class MemberServiceImpl implements MemberService {
+
+	// mapper함수 불러야하니까 객체 생성해주기
 	@Autowired
 	private membershipMapper mapper;
-	
-	//이 함수가 동작할 땐 mapper을 호출한다. 
+
+	// 이 함수가 동작할 땐 mapper을 호출한다.
 	public void postMember(memberVO vo) {
 		mapper.postMember(vo);
 	}
-	
+
 	@Override
 	public List<memberVO> getMemberList() {
 		return mapper.getMemberList();
 	}
 
 	@Override
-	//매개변수로 vo가 들어오면 그것만 자동으로 값 생성되고
-	//마이바티스 할 때도 vo로만 인식되는 건가
+	// 매개변수로 vo가 들어오면 그것만 자동으로 값 생성되고
+	// 마이바티스 할 때도 vo로만 인식되는 건가
 	public memberVO getPersonelInfo(int id) {
 		return mapper.getPersonelInfo(id);
 	}
 
+	//회원 정보 수정 
 	@Override
 	public void updatePersonelInfo(memberVO vo) {
 		mapper.updatePersonelInfo(vo);
 	}
 
-	
-	
+	// 회원 정보 삭제
+	@Override
+	public void deletePersonelInfo(int id) {
+		mapper.deletePersonelInfo(id);
+	}
 
 }

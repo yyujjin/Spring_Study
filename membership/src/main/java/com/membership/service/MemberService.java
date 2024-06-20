@@ -20,4 +20,7 @@ public interface MemberService {
 	
 //	개인 회원 정보 수정하기
 	public void updatePersonelInfo(memberVO vo);
+	
+//	개인 회원 정보 삭제하기
+	public void deletePersonelInfo(int id);
 }

@@ -74,6 +74,21 @@ public class MemberController {
 	}
 
 	
+	//공통점을 보면 requestMapping은 get 방식에만 붙어있네
+	//fomr쓸때는 post 로 써서 그런가. 
+	// 개인 회원 정보 삭제하기 
+		@RequestMapping("/deleteInfo")
+		@GetMapping
+		public String deletePersonelInfo(@RequestParam int id) {
+
+			log.info("삭제 로직 진입");
+			log.info("가져온 id값은 : " + id);
+			service.deletePersonelInfo(id);
+			log.info("삭제 완료!");
+			return "redirect:/member/list";
+			
+			
+		}
 	
 	
 	

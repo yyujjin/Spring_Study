@@ -12,4 +12,5 @@ public interface membershipMapper {
 	public List<memberVO> getMemberList();
 	public memberVO getPersonelInfo(int id);
 	public void updatePersonelInfo(memberVO vo);
+	public void deletePersonelInfo(int id);
 }
