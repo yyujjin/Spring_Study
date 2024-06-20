@@ -20,12 +20,18 @@
 		resultType="com.membership.model.memberVO">
 		SELECT * FROM testdb.members
 	</select>
-	
-	
 
-	<!-- 회원 수정 페이지 -->
-	<select id="getPersonelInfo" parameterType="int" resultType="com.membership.model.memberVO">
+
+
+	<!-- 개인 회원 정보 페이지 -->
+	<select id="getPersonelInfo" parameterType="int"
+		resultType="com.membership.model.memberVO">
 		select * from testdb.members where id = #{id}
 	</select>
+	
+	<!-- 개인 회원 정보 수정하기 -->
+	<update id="updatePersonelInfo" >
+		update testdb.members set userId=#{userId},userPw=#{userPw},userName=#{userName},userAge=#{userAge} where id = #{id};
+	</update>
 
 </mapper>

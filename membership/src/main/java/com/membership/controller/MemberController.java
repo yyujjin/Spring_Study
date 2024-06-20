@@ -59,8 +59,20 @@ public class MemberController {
 	public String getPersonelInfo(@RequestParam int id, Model model) {
 
 		log.info("가져온 id값은 : " + id);
-		model.addAttribute("info",service.getPersonelInfo(id));
+		model.addAttribute("info", service.getPersonelInfo(id));
 		return "/member/updateInfo";
 	}
 
+	@PostMapping("/updatePersonelInfo")
+	public String updatePersonelInfo(memberVO vo) {
+		log.info("개인 회원 수정 로직 진입");
+		log.info("넘어온 수정 요청 데이터 : " + vo.toString());
+		service.updatePersonelInfo(vo);
+		log.info("수정 완료 ");
+		return "redirect:/member/list";
+	}
+
 }
+
+
+

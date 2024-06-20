@@ -33,6 +33,12 @@ public class MemberServiceImpl implements MemberService{
 		return mapper.getPersonelInfo(id);
 	}
 
+	@Override
+	public void updatePersonelInfo(memberVO vo) {
+		mapper.updatePersonelInfo(vo);
+	}
+
+	
 	
 
 }

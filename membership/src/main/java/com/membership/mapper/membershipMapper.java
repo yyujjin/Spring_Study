@@ -11,4 +11,5 @@ public interface membershipMapper {
 	public void postMember(memberVO vo);
 	public List<memberVO> getMemberList();
 	public memberVO getPersonelInfo(int id);
+	public void updatePersonelInfo(memberVO vo);
 }

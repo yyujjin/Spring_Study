@@ -13,8 +13,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.membership.model.memberVO;
 
+import lombok.extern.java.Log;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+@Log
 public class MembershipMapperTest {
 
 
@@ -36,6 +39,7 @@ public class MembershipMapperTest {
 	
 	@Autowired
 	private membershipMapper mapper;
+//	private memberVO vo;
 	
 //	@Test
 //	public void test() {
@@ -51,12 +55,28 @@ public class MembershipMapperTest {
 //		
 //	}
 	
+//	@Test
+//	public void test() {
+//		int id=7;
+//		
+//		memberVO vo = mapper.getPersonelInfo(id);
+//		System.err.println(vo.toString());
+//	}
+	
+	
 	@Test
 	public void test() {
-		int id=7;
+		memberVO vo = new memberVO();
+//		객체 생성이 자동으로 안되니까 여기서 vo 만들어 줘야지
+		//서버 실행되는게 아니라서 여기서는 log를 못쓰는건가?
+		vo.setId(14);
+		vo.setUserId("스펀지밥");
+		vo.setUserPw("44444");
+		vo.setUserName("화장실가야지");
+		vo.setUserAge("44");
+		mapper.updatePersonelInfo(vo);
+		log.info("변경이 잘되었다.");
 		
-		memberVO vo = mapper.getPersonelInfo(id);
-		System.err.println(vo.toString());
 	}
 	
 	
